@@ -1,0 +1,9 @@
+{"VaultARN":"arn:aws:glacier:us-east-1:123456789000:vaults/photos","InventoryDate":"2020-03-30T19:04:27Z","ArchiveList":[
+{
+  "ArchiveId": "tOr_vy394Dp1R03Yr6t00Wy_g8ZhgxFo60qQW5TKXlEds-FghsY6a9PAF7TpheF62I-0dM3aS34PX1_63ATvEFoKiT-cmGVleu6FG6NcTNRHLFze4Dh0Roqk1xxHYIKtLNuP7x4GvA",
+  "ArchiveDescription": "{\"path\": \"/Photos/GoPro/2016-01-03/hero3-blackedition/gopr0048.jpg\", \"type\": \"file\"}",
+  "CreationDate": "2017-04-13T13:09:52Z",
+  "Size": 4387487,
+  "SHA256TreeHash": "b67b2c5347f8fe6610288a83209f60a9286f3e4e06ccc03524d2927e8f549e19"
+}]}
+    
