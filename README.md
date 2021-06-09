@@ -2,6 +2,9 @@
 
 Downloads files from S3 Glacier and unpacks to a path specified in the ArchiveDescription metadata. The format comes from the QNAP Glacier Backup tool I used to use on my NAS.
 
+## Install
+`go get github.com/compnski/glacierrestore`
+
 ## Usage
 
 ``` shell
