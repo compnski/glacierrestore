@@ -90,12 +90,15 @@ func main() {
 		}
 	}
 
-	if inventory != nil && len(inventory.ArchiveList) > 0 {
+	if *initiateRestore && inventory != nil && len(inventory.ArchiveList) > 0 {
 		RestoreFromInventory(gapi, inventory, *restoreBasePath, existingJobsMap)
 	}
 
 	if *downloadJobOutput {
 		for _, job := range successJobs {
+			if *job.Action != "ArchiveRetrieval" {
+				continue
+			}
 			err = RestoreDataFromCompletedJob(gapi, *restoreBasePath, job)
 			if err != nil {
 				panic(err)
@@ -139,6 +142,9 @@ func FetchJobs(gapi JobFetcher, maxJobCount int) (successJobs []*glacier.JobDesc
 	}
 
 	for _, job := range append(inProgressJobs, successJobs...) {
+		if *job.Action != "ArchiveRetrieval" {
+			continue
+		}
 		if existingJob, exists := existingJobsMap[*job.ArchiveId]; exists {
 			log.Printf("Duplicate job for id %s, Previous job: %+v", *job.ArchiveId, *existingJob.JobId)
 		}
